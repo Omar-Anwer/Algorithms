@@ -5,6 +5,9 @@ static int iterations;
 
 typedef int Type;
 
+#define KEY_NOT_FOUND -1
+
+
 size_t OneWaylinearSearch(Type a[], size_t size, Type key)
 {
     for (int i = 0; i < size; ++i)
@@ -14,7 +17,7 @@ size_t OneWaylinearSearch(Type a[], size_t size, Type key)
         }
         //iterations++;
     }
-    return -1;
+    return KEY_NOT_FOUND;
 }
 
 size_t TwoWayLinearSearch(Type a[], size_t size, Type key)
@@ -30,7 +33,7 @@ size_t TwoWayLinearSearch(Type a[], size_t size, Type key)
         }
         iterations++;
     }
-    return -1;
+    return KEY_NOT_FOUND;
 }
 
 size_t TwoWayLinearSearchV2(Type a[], size_t size, Type key)
@@ -48,7 +51,7 @@ size_t TwoWayLinearSearchV2(Type a[], size_t size, Type key)
             return ((key == a[front]) ? front : back);
         }
     }
-    return -1;
+    return KEY_NOT_FOUND;
 }
 
 
@@ -60,7 +63,7 @@ int main()
 
     int idx = TwoWayLinearSearch(arr, size, 8);
 
-    if (idx == -1) {
+    if (idx == KEY_NOT_FOUND) {
         cout << "NO " <<"\n";
     }
     else {
